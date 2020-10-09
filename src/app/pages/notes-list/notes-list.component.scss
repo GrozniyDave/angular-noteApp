@@ -1,0 +1,22 @@
+@import '../../../main.scss';
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.notes-list {
+  margin-top: 35px;
+  margin-bottom: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  app-note-card {
+    flex: 1 0 140px;
+    margin: 5px;
+  }
+}

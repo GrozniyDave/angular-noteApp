@@ -1,0 +1,34 @@
+<div class="main-container">
+  <div class="search-bar-container">
+    <div class="field">
+      <p class="control has-icons-left">
+        <input class="input" type="text" placeholder="Filter" (keyup)="filter($event.target.value)">
+        <span class="icon is-small is-left">
+          <i class="fas fa-search"></i>
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <div class="notes-list" [@staggerAnimation]>
+    <app-note-card *ngFor="let note of filteredNotes; index as i" [link]="i" (delete)="deleteNote(i)"
+      [title]="note.title" [body]="note.body" [@entryExitAnimation]>
+    </app-note-card>
+  </div>
+  <div>
+    <a routerLink="new">
+      <button mat-fab class="addNoteButton actionButton" matTooltip="Add Note" matTooltipPosition="after"
+        matTooltipClass="button-tooltip-custom">
+        <mat-icon>add</mat-icon>
+      </button>
+    </a>
+    <button (click)="deleteAllNotes()" mat-fab class="deleteAllButton actionButton" matTooltip="Delete all Notes"
+      matTooltipPosition="after" matTooltipClass="button-tooltip-custom">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  <button (click)="devButtonClick()" mat-fab class="devButton actionButton" matTooltip="Developer button"
+    matTooltipPosition="after" matTooltipClass="button-tooltip-custom">
+    <mat-icon>android</mat-icon>
+  </button>
+</div>

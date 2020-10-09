@@ -1,0 +1,109 @@
+@import "../../main.scss";
+
+
+.note-card-container {
+  position: relative;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 4px 15px 8px rgba(black, 0.068);
+  transition: box-shadow 0.1s ease-out;
+
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 4px 15px 8px rgba($blue, 0.3);
+
+    //on container hover, do this with x-button class
+    .x-button {
+      opacity: 1;
+      transform: scale(1);
+      transition-delay: 0.1s;
+    }
+
+    .edit-button {
+      opacity: 1;
+      transform: scale(1);
+      transition-delay: 0.3s;
+    }
+  }
+
+  .note-card-content {
+    padding: 12px;
+
+    .note-card-title {
+      font-size: 22px;
+      font-weight: bold;
+      color: $dark-blue;
+      text-align: center;
+      border-bottom: 1px solid $dark-blue;
+      background-color: lighten($color: $lighter-blue, $amount: 1);
+      padding: 5px 10px;
+    }
+
+    .note-card-body {
+      position: relative;
+      // //max height before truncation
+      max-height: 80px;
+      overflow: hidden;
+      // color: #555;
+      padding: 15px 0;
+      /* Add padding to the top/bottom */
+
+      color: black;
+      font-size: 16px;
+      text-align: center;
+      font-weight: 400;
+
+      .fade-out-truncation {
+        position: absolute;
+        pointer-events: none;
+        bottom: 0;
+        height: 50%;
+        width: 100%;
+        background: linear-gradient(to bottom,
+            rgba(white, 0) 0%,
+            rgba(white, 0.35) 50%,
+            white);
+      }
+    }
+  }
+}
+
+.x-button {
+  top: -12px;
+  right: -12px;
+  background-image: url("../../assets/delete.svg");
+}
+
+.edit-button {
+  bottom: -12px;
+  right: -12px;
+  background-image: url("../../assets/edit.svg");
+}
+
+.card-button {
+  position: absolute;
+  z-index: 9999;
+  height: 36px;
+  width: 36px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  //btn is hidden by default
+  opacity: 0;
+  transform: scale(0.35);
+
+  &:hover {
+    transform: scale(1.5);
+    width: 38px;
+    height: 38px;
+    transition: all .05s ease-in;
+  }
+
+  //while clicking it
+  &:active {
+    transform: scale(1.7);
+    width: 40px;
+    height: 40px;
+  }
+}

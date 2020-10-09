@@ -1,0 +1,129 @@
+//Changing bulma vars and adding global styles
+
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+
+// Set your brand colors
+$blue:#0554F2;
+$dark-blue:#173f8f;
+$light-blue:#4CB1F7;
+$lighter-blue:#eaf7ff;
+
+$light:#0233CB;
+$dark:#044BD9;
+
+$coral:#FF8552;
+
+$green:#0bf387;
+
+
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito",
+sans-serif;
+$primary: $blue;
+$link: $dark-blue;
+
+// Update some of Bulma's component variables
+$body-background-color: $light-blue;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-background-color:grey !important;
+$input-shadow: none;
+
+
+//global styles
+
+html,
+body {
+  height: 100%;
+  //set default font size to 18px
+  font-size: 18px !important;
+  overflow: hidden;
+  background-color: $lighter-blue;
+}
+
+.button.is-success {
+  background-color: $dark-blue;
+
+}
+
+.deletedNoteSnackbar {
+  background-color: rgb(153, 50, 50);
+  color: white;
+  font-size: 24px;
+}
+
+.updatedNoteSnackbar {
+  background-color: $dark-blue;
+  color: white;
+  font-size: 24px;
+}
+
+.addedNoteSnackbar {
+  background-color: $light-blue;
+  color: white;
+  font-size: 24px;
+}
+
+.mat-simple-snackbar-action {
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 32px !important;
+}
+
+.addNoteButton {
+  top: 15%;
+  left: 10%;
+}
+
+.deleteAllButton {
+  top: 25%;
+  left: 10%;
+}
+
+.devButton {
+  top: 35%;
+  left: 10%;
+}
+
+.actionButton {
+  background: linear-gradient(to right, $dark-blue, $light-blue, );
+  // background-image: linear-gradient(to right, #4481eb, #04befe, #3f86ed);
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+  border-color: transparent;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  font-size: 2em;
+  animation: fadein .6s;
+
+  &:hover {
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transform: scale(1.2);
+    transition: all .3s ease-in-out;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.button-tooltip-custom {
+  background: $dark-blue;
+  font-size: 12px;
+}
